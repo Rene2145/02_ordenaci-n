@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 int A[10];
-    int n,i,j,aux;
+    int n,i,j,aux,k;
 
     cout << "Ingresa la cantidad de numeros: ";
     cin >> n;
@@ -18,7 +18,30 @@ int A[10];
     {
         cout<<A[i]<<" ";
 	}
-    
-   
+	
+   for(i=0;i<n-1;i++){
+   		k=0;
+        for(j=0;j<n-1-i;j++)
+        {
+            if(A[j]>A[j + 1])
+            {
+                aux=A[j];
+                A[j]=A[j+1];
+                A[j+1]=aux;
+                k=1;
+            }
+        }
+    if(k==0){
+    	break;
+	}
+    }
+    cout <<"\n\nArreglo ordenado:"<<endl;
+
+
+    for(i=0;i<n;i++)
+    {
+        cout<<A[i]<<" ";
+    }
+
     return 0;
 }
