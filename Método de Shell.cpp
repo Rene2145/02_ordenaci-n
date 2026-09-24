@@ -1,43 +1,27 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-int A[10];
-    int n,i,j,aux;
+int shellSort(int A[], int n);
 
-    cout << "Ingresa la cantidad de numeros: ";
-    cin >> n;
-    cout << "Ingresa los numeros:" << endl;
-    for(i=0;i<n;i++)
-    {
-	cin >> A[i];
-    }
-    cout <<"\nArreglo desordenado:"<<endl;
-    for(i=0;i<n;i++)
-    {
-        cout<<A[i]<<" ";
+int main(){
+	int A[]={23, 12, 1, 5, 9 , 2, 8, 3};
+	int n=8;
+	
+	for(int k=n/2;k>0;k/=2){
+		for (int i=k;i<n;i++){
+			int aux=A[i];
+			int j=i;
+			while (j>=k&&A[j-k]>aux){
+				A[j]= A[j-k];
+				j -=k;
+			}
+			A[j]=aux;
+		}
 	}
-    
-    for(i=0;i<n-1;i++)
-    {
-        for(j=0;j<n-1-i;j++)
-        {
-            if(A[j]>A[j + 1])
-            {
-                aux=A[j];
-                A[j]=A[j+1];
-                A[j+1]=aux;
-            }
-        }
-    }
-    cout <<"\n\nArreglo ordenado:"<<endl;
-
-
-    for(i=0;i<n;i++)
-    {
-        cout<<A[i]<<" ";
-    }
-
+	
+	cout<<"Arreglo ordenado: ";
+	for(int i=0; i <n;i++){
+		cout<<A[i]<<" ";
+	}
     return 0;
 }
