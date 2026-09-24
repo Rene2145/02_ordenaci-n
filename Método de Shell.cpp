@@ -4,8 +4,24 @@ using namespace std;
 int shellSort(int A[], int n);
 
 int main(){
-	int A[]={23, 12, 1, 5, 9 , 2, 8, 3};
-	int n=8;
+	int n;
+	int A[60];
+	cout<<"						\n";
+	cout<<"						+=====================+\n";
+	cout<<"						|   METODO DE SHELL   |\n";
+	cout<<"						+=====================+\n\n";
+	cout<<"1) Ingrese la cantidad de elementos: ";
+	cin>>n;
+	cout<<"2) Ingrese los elementos:\n";
+	for(int i=0; i <n;i++){
+	cout<<"  ";cin>>A[i];
+	}
+	cout<<"\n RESULTADO\n";
+	cout<<"\n Arreglo desordenado: \n";
+	for(int i=0; i <n;i++){
+	cout<<"  "<<A[i]<<" ";
+	}
+	
 	
 	for(int k=n/2;k>0;k/=2){
 		for (int i=k;i<n;i++){
@@ -19,9 +35,9 @@ int main(){
 		}
 	}
 	
-	cout<<"Arreglo ordenado: ";
+	cout<<"\n\n Arreglo ordenado: \n";
 	for(int i=0; i <n;i++){
-		cout<<A[i]<<" ";
+		cout<<"  "<<A[i]<<" ";
 	}
     return 0;
 }

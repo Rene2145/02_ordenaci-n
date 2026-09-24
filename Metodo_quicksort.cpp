@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int shellSort(int A[], int n);
+int QuickSort(int A[], int n);
 
 int main(){
 	int A[]={23, 12, 1, 5, 9 , 2, 8, 3};
